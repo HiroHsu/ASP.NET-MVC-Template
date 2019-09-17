@@ -4,3 +4,9 @@
 
 /.vs
 /Template/.vs/Template
+/Template/Template.Core/obj/Debug/Template.Core.csprojAssemblyReference.cache
+/Template/Template.Data/obj/Debug/Template.Data.csprojAssemblyReference.cache
+/Template/Template.Framework/obj/Debug/Template.Framework.csprojAssemblyReference.cache
+/Template/Template.Service/obj/Debug/Template.Service.csprojAssemblyReference.cache
+/Template/Template.ViewModel/obj/Debug/Template.ViewModel.csprojAssemblyReference.cache
+/Template/Template.Web/bin
