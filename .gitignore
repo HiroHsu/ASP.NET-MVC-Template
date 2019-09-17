@@ -10,3 +10,16 @@
 /Template/Template.Service/obj/Debug/Template.Service.csprojAssemblyReference.cache
 /Template/Template.ViewModel/obj/Debug/Template.ViewModel.csprojAssemblyReference.cache
 /Template/Template.Web/bin
+/Template/packages
+/Template/Template.Core/bin/Debug
+/Template/Template.Core/obj/Debug
+/Template/Template.Data/bin/Debug
+/Template/Template.Data/obj/Debug
+/Template/Template.Framework/bin/Debug
+/Template/Template.Framework/obj/Debug
+/Template/Template.Service/bin/Debug
+/Template/Template.Service/obj/Debug
+/Template/Template.ViewModel/bin/Debug
+/Template/Template.ViewModel/obj/Debug
+/Template/Template.Web/obj/Container
+/Template/Template.Web/obj/Debug
