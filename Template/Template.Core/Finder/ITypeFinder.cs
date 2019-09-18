@@ -8,6 +8,6 @@ namespace Template.Core.Finder
 {
     public interface ITypeFinder
     {
-
+        IEnumerable<Type> GetTypeByClasses<T>(bool onlyConcreteClasses = true);
     }
 }

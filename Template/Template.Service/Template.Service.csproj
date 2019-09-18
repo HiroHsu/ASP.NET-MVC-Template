@@ -54,9 +54,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\ITestService.cs" />
+    <Compile Include="Test\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Template.Core\Template.Core.csproj">
+      <Project>{72d23cff-fb88-4901-9758-34d53a1b63ed}</Project>
+      <Name>Template.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Template.Data\Template.Data.csproj">
+      <Project>{480e7c5e-176d-4d19-9675-d22052e44477}</Project>
+      <Name>Template.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Template.ViewModel\Template.ViewModel.csproj">
+      <Project>{3e6951fe-63cc-44e9-8720-95d0a5b4d982}</Project>
+      <Name>Template.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

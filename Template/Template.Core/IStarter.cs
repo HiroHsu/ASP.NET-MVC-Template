@@ -8,5 +8,8 @@ namespace Template.Core
 {
     public interface IStarter
     {
+        DependencyManagement.IocManager IocManager { get; set; }
+
+        void Initialize();
     }
 }
