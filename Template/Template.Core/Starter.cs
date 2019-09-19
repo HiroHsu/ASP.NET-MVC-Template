@@ -15,8 +15,7 @@ namespace Template.Core
 {
     public class Starter : IStarter
     {
-        private IocManager _iocManager;
-        public IocManager IocManager { get => _iocManager; set => _iocManager = value; }
+
         public void Initialize()
         {
             //自動註冊依賴項
@@ -37,20 +36,22 @@ namespace Template.Core
         /// <param name="typeFinder"></param>
         private void AutoRegisterDependenices(TypeFinder typeFinder)
         {
-            _iocManager = new IocManager(UnityConfig.Container);
-            _iocManager.Container.RegisterInstance<IStarter>(this);
 
+            UnityConfig.Container.RegisterInstance<IStarter>(this);
+            //找出所有繼承 IDependencyRegistrar 的類別
             var drTypes = typeFinder.GetTypeByClasses<IDependencyRegistrar>();
             var drInstance = new List<IDependencyRegistrar>();
 
             foreach (var drType in drTypes)
             {
+                //逐一建立實體
                 drInstance.Add((IDependencyRegistrar)Activator.CreateInstance(drType));
             }
             drInstance = drInstance.OrderBy(o => o.Order).ToList();
             foreach (var drItem in drInstance)
             {
-                drItem.Register(_iocManager.Container);
+                //依照實體執行 Register 作業
+                drItem.Register(UnityConfig.Container);
             }
         }
         /// <summary>
@@ -72,7 +73,9 @@ namespace Template.Core
             });
 
             MapperConfig.Init(config);
-            _iocManager.Container.RegisterInstance(MapperConfig.Mapper);
+
+            //註冊AutoMapper
+            UnityConfig.Container.RegisterInstance(MapperConfig.Mapper);
         }
 
     }

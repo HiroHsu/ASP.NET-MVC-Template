@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Template.Core
 {
+    /// <summary>
+    /// 啟動器介面
+    /// </summary>
     public interface IStarter
     {
-        DependencyManagement.IocManager IocManager { get; set; }
+        /// <summary>
+        /// 專案初始化作業
+        /// </summary>
 
         void Initialize();
     }

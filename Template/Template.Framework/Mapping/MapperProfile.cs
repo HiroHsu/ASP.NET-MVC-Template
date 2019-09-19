@@ -10,6 +10,9 @@ namespace Template.Framework.Mapping
 {
     public partial class MapperProfile : Profile, IMappingOrder
     {
+        /// <summary>
+        /// 被初始化的順序
+        /// </summary>
         public int Order => 1;
         public MapperProfile()
         {

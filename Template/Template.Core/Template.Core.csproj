@@ -106,7 +106,6 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="DependencyManagement\IDependencyRegistrar.cs" />
-    <Compile Include="DependencyManagement\IocManager.cs" />
     <Compile Include="Finder\ITypeFinder.cs" />
     <Compile Include="Finder\TypeFinder.cs" />
     <Compile Include="IStarter.cs" />

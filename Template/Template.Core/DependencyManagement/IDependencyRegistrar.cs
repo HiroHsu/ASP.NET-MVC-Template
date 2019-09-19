@@ -7,6 +7,9 @@ using Unity;
 
 namespace Template.Core.DependencyManagement
 {
+    /// <summary>
+    /// 用來自動尋找並註冊的介面
+    /// </summary>
     public interface IDependencyRegistrar
     {
         /// <summary>
