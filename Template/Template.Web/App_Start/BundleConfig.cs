@@ -8,6 +8,15 @@ namespace Template.Web
         // 如需統合的詳細資訊，請瀏覽 https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/vue")
+                .Include("~/Scripts/babel.min.js")
+                .Include("~/Scripts/polyfill.min.js")
+                .Include("~/Scripts/vue.js")
+                .Include("~/Scripts/ElementUI/element-ui.js")
+                .Include("~/Scripts/axios.min.js")
+                );
+
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -19,9 +28,12 @@ namespace Template.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/bootstrap.min.css")
+                .Include("~/Content/Normalize.css")
+                .Include("~/Content/site.css")
+                .Include("~/Content/ElementUI/element-ui.css")
+                );
         }
     }
 }

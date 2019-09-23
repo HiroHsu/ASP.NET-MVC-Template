@@ -23,3 +23,9 @@
 /Template/Template.ViewModel/obj/Debug
 /Template/Template.Web/obj/Container
 /Template/Template.Web/obj/Debug
+/Template/Template.Core/obj/Release
+/Template/Template.Data/obj/Release
+/Template/Template.Framework/obj/Release
+/Template/Template.Service/obj/Release
+/Template/Template.ViewModel/obj/Release
+/Template/Template.Web/obj/Release
