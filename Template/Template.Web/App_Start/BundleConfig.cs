@@ -11,9 +11,12 @@ namespace Template.Web
             bundles.Add(new ScriptBundle("~/bundles/vue")
                 .Include("~/Scripts/babel.min.js")
                 .Include("~/Scripts/polyfill.min.js")
+
                 .Include("~/Scripts/vue.js")
                 .Include("~/Scripts/ElementUI/element-ui.js")
                 .Include("~/Scripts/axios.min.js")
+                .Include("~/Scripts/httpVueLoader.js")
+
                 );
 
 
