@@ -1,43 +1,239 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/vue")
 </head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top" id="header">
+        <div class="hamburger-container " @@click="collapseChage">
+            <span v-bind:class="collapseClass"></span>
+        </div>
+        <div class="brand">
+            @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        
+
+
+    </div>
+    <div class="main">
+        <div id="side" class="sidebar">
+            <sidebar :collapse="isCollapse" :menu-mode="vMenuMode"></sidebar>
+        </div>
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
+
+            @RenderBody()
+            <p>A</p>
+            <p>A</p>
+            <p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+            <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
+        </div>
+        <div class="container body-content">
+
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+            </footer>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
+   
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
+
+
+    <script type="text/javascript">
+        //httpVueLoader.register(Vue, '../Scripts/Components/sidebar.vue');
+        //Vue.use(httpVueLoader);
+        var bus = new Vue({
+            data: {
+                tabName: '',
+                isCollapse: true,
+            },
+            watch:
+            {
+                isCollapse: function (value) {
+                    sidebar.isCollapse = value;
+                }
+            }
+        });
+        var headerapp = new Vue({
+            el: '#header',
+            data: {
+                collapse: true,
+            },
+            methods: {
+                
+                collapseChage: function () {
+                    this.collapse = !this.collapse;
+                    bus.$emit('isCollapse', this.collapse);
+                },
+                OpenClose: function (value) {
+                    bus.isCollapse = value;
+                },
+            },
+            mounted: function () {
+
+            },
+            watch: {
+                collapse: function () {
+                    bus.isCollapse = this.collapse;
+                }
+            },
+            filters: {
+
+
+            }, computed: {
+                collapseClass: function () {
+                    if (this.collapse) {
+                        return 'el-icon-s-fold';
+                    }
+                    return 'el-icon-s-unfold';
+                }
+            }
+        })
+        var sidebar = new Vue({
+            el: '#side',
+            components: {
+                'sidebar': httpVueLoader('../Scripts/Components/sidebar.vue'),
+            },
+            data: {
+                isCollapse: true,
+                vMenuMode:"vertical",
+                items: [
+                    {
+                        icon: 'el-icon-lx-home',
+                        index: 'dashboard',
+                        title: '系統首頁'
+                    },
+                    {
+                        icon: 'el-icon-lx-cascades',
+                        index: 'table',
+                        title: '基礎表格'
+                    },
+                    {
+                        icon: 'el-icon-lx-copy',
+                        index: 'tabs',
+                        title: 'Tab頁籤'
+                    },
+                    {
+                        icon: 'el-icon-lx-calendar',
+                        index: '3',
+                        title: '表單相關',
+                        subs: [
+                            {
+                                index: 'form',
+                                title: '基本表單'
+                            },
+                            {
+                                index: '3-2',
+                                title: '三級選單',
+                                subs: [
+                                    {
+                                        index: 'editor',
+                                        title: '內文編輯器'
+                                    },
+                                    {
+                                        index: 'markdown',
+                                        title: 'markdown編輯器'
+                                    },
+                                ]
+                            },
+                            {
+                                index: 'upload',
+                                title: '文件上傳'
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-lx-emoji',
+                        index: 'icon',
+                        title: '自訂圖標'
+                    },
+                    {
+                        icon: 'el-icon-pie-chart',
+                        index: 'charts',
+                        title: 'schart圖表'
+                    },
+                    {
+                        icon: 'el-icon-rank',
+                        index: '6',
+                        title: '拖曳組件',
+                        subs: [
+                            {
+                                index: 'drag',
+                                title: '拖曳列表',
+                            },
+                            {
+                                index: 'dialog',
+                                title: '拖曳彈窗',
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-lx-global',
+                        index: 'i18n',
+                        title: '國際化功能'
+                    },
+                    {
+                        icon: 'el-icon-lx-warn',
+                        index: '7',
+                        title: '錯誤處理',
+                        subs: [
+                            {
+                                index: 'permission',
+                                title: '權限測試'
+                            },
+                            {
+                                index: '404',
+                                title: '404頁面'
+                            }
+                        ]
+                    }
+                    ,
+
+                ]
+
+            },
+            created: function () {
+                // 通过 Event Bus 进行组件间通信，来折叠侧边栏
+                bus.$on('collapse', function (msg) {
+                    sidebar.collapse = msg;
+                })
+
+            },
+            mounted: function () {
+                
+            },
+
+        });
+
+    </script>
+
+
+
+
+
 </body>
 </html>

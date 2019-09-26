@@ -252,6 +252,7 @@
     </None>
     <Content Include="Scripts\axios.min.map" />
     <Content Include="Scripts\axios.map" />
+    <Content Include="Scripts\Components\sidebar.vue" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ElementUI\element-ui.js" />
     <Content Include="Scripts\httpVueLoader.js" />

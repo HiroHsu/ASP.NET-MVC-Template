@@ -32,7 +32,7 @@ namespace Template.Web
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/bootstrap.min.css")
+                //.Include("~/Content/bootstrap.min.css")
                 .Include("~/Content/Normalize.css")
                 .Include("~/Content/site.css")
                 .Include("~/Content/ElementUI/element-ui.css")
