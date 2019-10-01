@@ -111,6 +111,8 @@
     <Compile Include="IStarter.cs" />
     <Compile Include="Mapping\IMappingOrder.cs" />
     <Compile Include="Mapping\MapperConfig.cs" />
+    <Compile Include="Patterns\SingletonPatterns\Singleton.cs" />
+    <Compile Include="Patterns\SingletonPatterns\SingletonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Starter.cs" />
     <Compile Include="StarterRun.cs" />

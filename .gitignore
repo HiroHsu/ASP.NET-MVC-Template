@@ -29,3 +29,5 @@
 /Template/Template.Service/obj/Release
 /Template/Template.ViewModel/obj/Release
 /Template/Template.Web/obj/Release
+/Template/Template.CoreTests/bin/Debug
+/Template/Template.CoreTests/obj
