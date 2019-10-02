@@ -33,7 +33,7 @@ namespace Template.Core.Patterns.SingletonPatterns
             }
         }
 
-           
+
         public static T Get<T>(string keyName)
         {
             var model = _singletons.SingleOrDefault(o => o.KeyName.Equals(keyName));
@@ -47,6 +47,17 @@ namespace Template.Core.Patterns.SingletonPatterns
             }
         }
 
+        public static void ReSet<T>(string keyName, dynamic obj)
+        {
+            var singleton = Get<T>(keyName);
+            if (singleton != null)
+            {
+                var model = _singletons.SingleOrDefault(o => o.KeyName.Equals(keyName));
+                model.KeyName = keyName;
+                model.ObjectType = typeof(T);
+                model.Object = obj;
+            }
+        }
 
     }
 }
