@@ -44,7 +44,7 @@ namespace Template.Core.Patterns.SingletonPatterns
         }
 
         /// <summary>
-        /// 以關鍵名稱取回已個已經存在的實例
+        /// 以關鍵名稱取回一個已經存在的實例
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="keyName"></param>
