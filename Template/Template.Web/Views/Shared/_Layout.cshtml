@@ -48,7 +48,7 @@
             <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
             <p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p><p>A</p>
         </div>
-        <div class="container body-content">
+        <div class="container body-content footer-container">
 
             <hr />
             <footer>
@@ -231,7 +231,13 @@
 
     </script>
 
+     <script>
+        $(document).ready(function () {
 
+            $('.sidebar').height($('.container').outerHeight() + $('.footer-container').outerHeight());
+            //console.log($('.container').outerHeight());
+        });
+    </script>
 
 
 
