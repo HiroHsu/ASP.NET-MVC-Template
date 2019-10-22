@@ -1,4 +1,6 @@
 # ASP.NET-MVC-Template
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHiroHsu%2FASP.NET-MVC-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHiroHsu%2FASP.NET-MVC-Template?ref=badge_shield)
+
 #### 以.Net Framework 4.6.2 為基礎做的 MVC5 網站樣板，用來加快專案的產生，減少一些專案前期的工作
 
 ## 簡介
@@ -108,3 +110,7 @@
 
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHiroHsu%2FASP.NET-MVC-Template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHiroHsu%2FASP.NET-MVC-Template?ref=badge_large)
