@@ -51,7 +51,7 @@ namespace Template.Core
             foreach (var drItem in drInstance)
             {
                 //依照實體執行 Register 作業
-                drItem.Register(UnityConfig.Container);
+                drItem.Register(UnityConfig.Container, typeFinder);
             }
         }
         /// <summary>

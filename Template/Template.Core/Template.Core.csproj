@@ -115,6 +115,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="DependencyManagement\IDependencyRegistrar.cs" />
     <Compile Include="Domain\Entities\IDbContext.cs" />
     <Compile Include="Domain\Entities\ISoftDelete.cs" />

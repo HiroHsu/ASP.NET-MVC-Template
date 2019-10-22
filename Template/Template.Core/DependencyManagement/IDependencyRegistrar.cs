@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Template.Core.Finder;
 using Unity;
 
 namespace Template.Core.DependencyManagement
@@ -16,7 +17,7 @@ namespace Template.Core.DependencyManagement
         /// 依賴注入註冊
         /// </summary>
         /// <param name="unitContainer"></param>
-        void Register(IUnityContainer unitContainer);
+        void Register(IUnityContainer unitContainer, ITypeFinder typeFinder);
         /// <summary>
         /// 註冊的順序
         /// </summary>
